@@ -1,0 +1,68 @@
+{
+    "name": "Chrome Extension Template",
+    "version": "1.0",
+    "description": "Description",
+    "manifest_version": 3,
+    "options_page": "html/options.html",
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_popup": "html/popup.html",
+        "default_title": "Chrome Extension Template",
+        "default_icon": {
+            "16": "res/images/logo_16.png",
+            "32": "res/images/logo_32.png",
+            "48": "res/images/logo_48.png",
+            "128": "res/images/logo_128.png"
+        }
+    },
+    "icons": {
+        "16": "res/images/logo_16.png",
+        "32": "res/images/logo_32.png",
+        "48": "res/images/logo_48.png",
+        "128": "res/images/logo_128.png"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://www.google.com/*"
+            ],
+            "css": [
+                "css/toastr.min.css",
+                "css/contentStyle.css"
+            ],
+            "js": [
+                "js/jquery.js",
+                "js/toastr.min.js",
+                "js/sweetalert.min.js",
+                "js/simulate.min.js",
+                "js/arrive.min.js",
+                "js/contentScript.js"
+            ],
+            "all_frames": true,
+            "run_at": "document_idle"
+        }
+    ],
+    "permissions": [
+        "storage",
+        "tabs"
+    ],
+    "commands": {
+        "next": {
+            "suggested_key": {
+                "default": "Ctrl+Shift+1",
+                "mac": "Command+Shift+1"
+            },
+            "description": "Next"
+        },
+        "cancel": {
+            "suggested_key": {
+                "default": "Ctrl+Shift+2",
+                "mac": "Command+Shift+2"
+            },
+            "description": "Cancel"
+        }
+    },
+    "author": "Zaif Senpai"
+}
